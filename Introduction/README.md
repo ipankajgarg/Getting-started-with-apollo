@@ -16,5 +16,5 @@ Apollo helps to connect your UI with the Graphql Server and manages the whole cl
 - Manages client side data in a single centralized object :-
 (** Remember the problem when we are creating large application using React . Props are the only way to pass data from parent to child but what if we have deep nested child   )
 
-![alt text](https://imge.to/i/ZqIGf)
+![](https://imge.to/i/ZqIGf)
 
