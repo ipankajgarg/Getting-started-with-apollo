@@ -1,4 +1,5 @@
-This repository is just about installing core packages and this project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+This repository is just about installing minimal core packages to get started and i am using  [Create React App](https://github.com/facebook/create-react-app) which provides out of the box configuration
 
 
 ## Packages 
