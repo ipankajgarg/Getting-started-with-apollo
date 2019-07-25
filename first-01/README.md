@@ -17,7 +17,7 @@ This repository is just about installing minimal core packages to get started an
 
 - **react-apollo:** Its a wrapper or a layer for React.In simple words it connect react with apollo container
 
-- **apollo-boost:** provide access of Apollo-client(where all magic happens).There are another ways to get started with apollo-client but this is the most easiest way which requires probably zero configuration
+- **apollo-boost:** provide access of Apollo-client(where all the magic happens).There are another ways to get started with apollo-client but this is the most easiest way which requires probably zero configuration
 
 
 
