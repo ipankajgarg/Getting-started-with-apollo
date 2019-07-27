@@ -1,6 +1,6 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-Finally!! we are done with writing our first query
+
+##Finally!! we are done with writing our first query
 
 ###### Look into App.js inside src folder
 
