@@ -1,6 +1,7 @@
 
 
-##Finally!! we are done with writing our first query
+# Finally!! we are done with writing our first query
+
 
 ###### Look into App.js inside src folder
 
