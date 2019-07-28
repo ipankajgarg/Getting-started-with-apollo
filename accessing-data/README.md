@@ -3,4 +3,4 @@
 
 - The response comes from the query is accessible inside the component(component which was wrapped inside 2 parantheses) by **props.data**.Other properties comes along with response like loading ,error etc so you don't have to manage these things manually
 
-**If you have ever worked in redux then you know managing loading and error stuff for every network request needs so much repeatitive code**
+**If you have ever worked in redux then you know managing loading and error stuff for every network request needs so much repeatitive code .There's no middleware to set up or boilerplate to write before making your first request, nor do you need to worry about transforming and caching the response**
