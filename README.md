@@ -12,7 +12,7 @@
 - Single page application with ReactJS and Apollo
 
 
-###### This is for you if :-
+## This is for you if :-
 
 - You are new to Apollo and want to learn from scratch
 - You like state management libraries like Redux but tired of writing repetitive code(action,reducers etc.)
