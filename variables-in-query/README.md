@@ -22,7 +22,7 @@ This chapter is all about how we can add variables( variables are  just an argum
 Benefit and use case of a function?
 
 - We can access **props** inside a function
-- so if there's a key( which is coming from URL through react router http://localhost:3001/ or parent component ) inside props which we want to pass as a variable in a query 
+- so if there's a key( which is coming from URL through react router http://localhost:3001/key or parent component ) inside props which we want to pass as a variable in a query 
 
 
 
