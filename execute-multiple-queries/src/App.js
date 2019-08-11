@@ -59,3 +59,5 @@ export default compose(
   graphql(query1, { name: "firstObj"}),
   graphql(query2, { name: "secondObj" })
 )(App);
+
+
