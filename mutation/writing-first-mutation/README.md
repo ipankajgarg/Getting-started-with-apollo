@@ -6,7 +6,7 @@
 
 - Syntax of mutation is almost identical to query the only differences are
 
-######Query
+###### Query
 
 ```javascript
 query{
@@ -18,7 +18,7 @@ query{
 - query keyword while writing query is optional
 
 
-######Mutation
+###### Mutation
 
 ```javascript
 mutation Name($args:type){
