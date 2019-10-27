@@ -20,7 +20,7 @@ query{
 
 ###### Mutation
 
-``````javascript
+```javascript
 mutation Name($args:type){
    NameofMutation(args:$args){
        data
@@ -34,6 +34,6 @@ mutation Name($args:type){
 -  args are the arguements that we will pass while executing mutation(Will see the implementation in the next section)
 
 
-** Let's execute and post data in the next section
+**Let's execute and post data in the next section
 
 
