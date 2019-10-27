@@ -20,14 +20,13 @@ query{
 
 ######Mutation
 
-``````javascript
+```javascript
 mutation Name($args:type){
    NameofMutation(args:$args){
        data
    }
 }
 ```
-
 
 - mutation keyword is mandatory
 - Name could be anthing
