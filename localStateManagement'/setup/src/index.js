@@ -41,11 +41,13 @@ const client = new ApolloClient({
     Mutation: {
       countryName(obj, { name }, { getCacheKey }, info) {
         console.log(name);
-        const id = getCacheKey({
-          __typename: "Country",
-          name
-        });
-        console.log("mutating data", id);
+
+        //We dont need this because we are generating our own id
+        // const id = getCacheKey({
+        //   __typename: "Country",
+        //   name
+        // });
+        console.log("mutating data");
 
         const fragment = gql`
           fragment completeTodo on TodoItem {
@@ -54,10 +56,10 @@ const client = new ApolloClient({
         `;
         const todo = cache.readFragment({
           fragment,
-          id
+          id: name
         });
         const data = { ...todo, name: "You are changed" };
-        cache.writeData({ id, data });
+        cache.writeData({ id: name, data });
         return null;
       }
     }
