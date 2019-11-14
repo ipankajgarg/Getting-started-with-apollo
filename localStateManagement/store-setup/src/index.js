@@ -10,11 +10,12 @@ import { InMemoryCache } from "apollo-cache-inmemory";
 const cache = new InMemoryCache();
 
 const client = new ApolloClient({
-  cache,
-  uri: "https://countries.trevorblades.com/"
+  cache
 });
 
-//change uri value according to your end point
+//add uri value according to your end point like:-
+//{uri:"http://endpoint"}
+//
 
 ReactDOM.render(
   <ApolloProvider client={client}>
