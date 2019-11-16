@@ -15,7 +15,7 @@ function App(props) {
       >
         Click me
       </button>
-      <div>{`This is ${props.data.name || ""}`}</div>
+      <div>{`This is ${props.data.name}`}</div>
     </div>
   );
 }
