@@ -8,6 +8,9 @@ import gql from "graphql-tag";
 
 //free graphql endpoint
 
+//Dont do that if you have a kid key in your object
+//thiis line of code is just to create a unique identifier
+
 const cache = new InMemoryCache({
   dataIdFromObject: object => {
     return object.name;
