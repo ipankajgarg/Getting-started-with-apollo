@@ -1,15 +1,19 @@
+This section is just about installing minimal core packages to get started and i am using [Create React App](https://github.com/facebook/create-react-app) which provides out of the box configuration for react
 
-This repository is just about installing minimal core packages to get started and i am using  [Create React App](https://github.com/facebook/create-react-app) which provides out of the box configuration for react
-
-
-## Packages 
+## Packages
 
 - graphql
 - react-apollo
 - apollo-boost
 - graphql-tag
 
- **let me explain one by one what these libraries are actually doing for us**
+## Install
+
+```javascript
+yarn add graphql react-apollo apollo-boost graphql-tag
+```
+
+**let me explain one by one what these libraries are actually doing for us**
 
 - **graphql-tag:** GraphQL queries are not a valid javascript so we need some library which parses our queries into a valid javascript
 
@@ -19,9 +23,7 @@ This repository is just about installing minimal core packages to get started an
 
 - **apollo-boost:** provide access of Apollo-client(where all the magic happens).There are another ways to get started with apollo-client but this is the most easiest way which requires probably zero configuration
 
-
-
 ## wanna test out?
+
 - **yarn**
 - **yarn start**
-
