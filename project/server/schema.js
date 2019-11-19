@@ -67,6 +67,17 @@ const RootQuery = new GraphQLObjectType({
           return new Error("some internal server error");
         });
       }
+    },
+    myPost: {
+      type: PostType,
+      args: {
+        id: { type: new GraphQLNonNull(GraphQLString) }
+      },
+      resolve(parentValue, { id }) {
+        return Post.findOne({ _id: id }).catch(function(err) {
+          return new Error("some internal server error");
+        });
+      }
     }
   }
 });
