@@ -8,7 +8,8 @@ const {
   GraphQLNonNull,
   GraphQLString,
   GraphQLObjectType,
-  GraphQLSchema
+  GraphQLSchema,
+  GraphQLID
 } = graphql;
 
 const DemoType = new GraphQLObjectType({
@@ -24,6 +25,15 @@ const TokenType = new GraphQLObjectType({
   name: "TokenType",
   fields: {
     token: { type: GraphQLString }
+  }
+});
+
+const PostType = new GraphQLObjectType({
+  name: "PostType",
+  fields: {
+    title: { type: GraphQLString },
+    description: { type: GraphQLString }
+    // _user: { type: GraphQLID }
   }
 });
 
@@ -68,6 +78,22 @@ const Mutation = new GraphQLObjectType({
           .catch(function(err) {
             return new Error("some internal server error");
           });
+      }
+    },
+    createPost: {
+      type: PostType,
+      args: {
+        title: { type: new GraphQLNonNull(GraphQLString) },
+        description: { type: new GraphQLNonNull(GraphQLString) },
+        token: { type: new GraphQLNonNull(GraphQLString) }
+      },
+      resolve(parentValue, { title, description, token }) {
+        const id = jwt.verify(token, "apollo-course");
+
+        const post = new Post({ title, description, _user: id["token"] });
+        return post.save().catch(function() {
+          return new Error("some internal server error");
+        });
       }
     }
   }
