@@ -20,7 +20,7 @@ const DemoType = new GraphQLObjectType({
   }
 });
 
-const ToktnType = new GraphQLObjectType({
+const TokenType = new GraphQLObjectType({
   name: "TokenType",
   fields: {
     token: { type: GraphQLString }
@@ -44,7 +44,7 @@ const Mutation = new GraphQLObjectType({
   name: "Mutation",
   fields: {
     signUp: {
-      type: ToktnType,
+      type: TokenType,
       args: {
         email: { type: new GraphQLNonNull(GraphQLString) },
         password: { type: new GraphQLNonNull(GraphQLString) }
