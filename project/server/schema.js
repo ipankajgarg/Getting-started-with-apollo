@@ -46,6 +46,19 @@ const RootQuery = new GraphQLObjectType({
         console.log("incoming request");
         return { name: "pankaj" };
       }
+    },
+    myPosts: {
+      type: new GraphQLList(PostType),
+      args: {
+        token: { type: new GraphQLNonNull(GraphQLString) }
+      },
+      resolve(parentValue, { token }) {
+        const id = jwt.verify(token, "apollo-course");
+
+        return Post.find({ _user: id["token"] }).catch(function(err) {
+          return new Error("some internal server error");
+        });
+      }
     }
   }
 });
