@@ -59,6 +59,14 @@ const RootQuery = new GraphQLObjectType({
           return new Error("some internal server error");
         });
       }
+    },
+    allPosts: {
+      type: new GraphQLList(PostType),
+      resolve() {
+        return Post.find({}).catch(function(err) {
+          return new Error("some internal server error");
+        });
+      }
     }
   }
 });
