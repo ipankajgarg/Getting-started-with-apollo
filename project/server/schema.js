@@ -9,7 +9,7 @@ const {
   GraphQLString,
   GraphQLObjectType,
   GraphQLSchema,
-  GraphQLID
+  GraphQLInt
 } = graphql;
 
 const DemoType = new GraphQLObjectType({
@@ -32,7 +32,8 @@ const PostType = new GraphQLObjectType({
   name: "PostType",
   fields: {
     title: { type: GraphQLString },
-    description: { type: GraphQLString }
+    description: { type: GraphQLString },
+    viewed: { type: GraphQLInt }
     // _user: { type: GraphQLID }
   }
 });
@@ -74,9 +75,14 @@ const RootQuery = new GraphQLObjectType({
         id: { type: new GraphQLNonNull(GraphQLString) }
       },
       resolve(parentValue, { id }) {
-        return Post.findOne({ _id: id }).catch(function(err) {
-          return new Error("some internal server error");
-        });
+        return Post.findById(id)
+          .then(function(data) {
+            data.viewed += 1;
+            return data.save();
+          })
+          .catch(function(err) {
+            return new Error("some internal server");
+          });
       }
     }
   }
