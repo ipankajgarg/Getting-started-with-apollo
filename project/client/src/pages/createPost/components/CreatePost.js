@@ -2,10 +2,12 @@ import React from "react";
 import { Form, Icon, Input, Button, Checkbox, message } from "antd";
 import { gql } from "apollo-boost";
 import { graphql } from "react-apollo";
+import { useHistory } from "react-router-dom";
 
 function CreatePost(props) {
   const { getFieldDecorator } = props.form;
   const { container, button } = styles;
+  const history = useHistory();
 
   const handleSubmit = e => {
     e.preventDefault();
@@ -17,10 +19,9 @@ function CreatePost(props) {
       if (!err) {
         mutate({ variables: { title, description, token } })
           .then(data => {
-            console.log(data);
+            history.push("/");
           })
           .catch(error => {
-            console.log(error);
             message.error(error.message, 3);
           });
       }

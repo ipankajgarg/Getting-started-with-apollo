@@ -28,7 +28,6 @@ function Login(props) {
             }
           )
           .catch(error => {
-            console.log(error);
             message.error(error.message, 3);
           });
       }

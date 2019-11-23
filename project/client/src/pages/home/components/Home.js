@@ -8,10 +8,10 @@ const { TabPane } = Tabs;
 
 class Home extends Component {
   render() {
-    const { iconContainer } = styles;
+    const { iconContainer, container } = styles;
 
     return (
-      <div>
+      <div style={container}>
         <Tabs defaultActiveKey="1">
           <TabPane tab="MY POSTS" key="1">
             <MyPosts />
@@ -43,7 +43,10 @@ const styles = {
     lineHeight: "50px",
     color: "#1890FF"
   },
-  icon: {}
+
+  container: {
+    margin: "100px 30px"
+  }
 };
 
 export default Home;
