@@ -9,7 +9,8 @@ const {
   GraphQLString,
   GraphQLObjectType,
   GraphQLSchema,
-  GraphQLInt
+  GraphQLInt,
+  GraphQLID
 } = graphql;
 
 const DemoType = new GraphQLObjectType({
@@ -31,6 +32,7 @@ const TokenType = new GraphQLObjectType({
 const PostType = new GraphQLObjectType({
   name: "PostType",
   fields: {
+    id: { type: GraphQLID },
     title: { type: GraphQLString },
     description: { type: GraphQLString },
     viewed: { type: GraphQLInt }
