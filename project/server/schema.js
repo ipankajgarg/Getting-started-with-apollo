@@ -114,7 +114,8 @@ const Mutation = new GraphQLObjectType({
             });
           })
           .catch(function(err) {
-            return new Error("some internal server error");
+            console.log(err.message);
+            return new Error(err.message);
           });
       }
     },

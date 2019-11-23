@@ -2,6 +2,11 @@ const express = require("express");
 const expressGraphql = require("express-graphql");
 const schema = require("./schema");
 const mongoose = require("mongoose");
+var cors = require("cors");
+
+const app = express();
+
+app.use(cors());
 
 //** connecting mongoose with express
 mongoose.connect(
@@ -16,8 +21,6 @@ mongoose.connection
   .on("error", error => console.log("Error connecting to MongoLab:", error));
 
 //**
-
-const app = express();
 
 app.get("/", function(req, res) {
   res.send("hello world");
