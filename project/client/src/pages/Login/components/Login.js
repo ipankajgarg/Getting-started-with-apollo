@@ -101,4 +101,4 @@ const mutation = gql`
   }
 `;
 
-export default Form.create({ name: "normal_login" })(graphql(mutation)(Login));
+export default Form.create({ name: "login_form" })(graphql(mutation)(Login));

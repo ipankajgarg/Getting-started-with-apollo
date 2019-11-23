@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Tabs } from "antd";
+import { Tabs, Icon } from "antd";
 import MyPosts from "./MyPosts";
 import AllPosts from "./AllPosts";
 
@@ -7,6 +7,8 @@ const { TabPane } = Tabs;
 
 class Home extends Component {
   render() {
+    const { iconContainer } = styles;
+
     return (
       <div>
         <Tabs defaultActiveKey="1">
@@ -17,9 +19,28 @@ class Home extends Component {
             <AllPosts />
           </TabPane>
         </Tabs>
+        <div style={iconContainer}>
+          <Icon type="plus" />
+        </div>
       </div>
     );
   }
 }
+
+const styles = {
+  iconContainer: {
+    position: "absolute",
+    right: 50,
+    bottom: 50,
+    fontSize: 40,
+    height: 50,
+    width: 50,
+    border: "1px solid #1890FF",
+    borderRadius: "50%",
+    lineHeight: "50px",
+    color: "#1890FF"
+  },
+  icon: {}
+};
 
 export default Home;
