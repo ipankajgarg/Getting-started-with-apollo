@@ -102,13 +102,17 @@ const Mutation = new GraphQLObjectType({
       resolve(parentValue, { email, password }) {
         return User.findOne({ email })
           .then(function(user) {
-            //let id;
             if (user) {
               //creating token through id(id is unique for all user)
-              const token = jwt.sign({ token: user["id"] }, "apollo-course"); //or use use["_id"]  mongoose is super smart
-              return { token };
-            }
+              if (user.password === password) {
+                //this is bad way to check password but i am not crypting my password so this will work fine :)
+                const token = jwt.sign({ token: user["id"] }, "apollo-course"); //or use use["_id"]  mongoose is super smart
+                console.log(user);
+                return { token };
+              }
 
+              return new Error("invalid email or password");
+            }
             const newUser = new User({ email, password });
             return newUser.save().then(function(user) {
               const token = jwt.sign({ token: user["id"] }, "apollo-course");

@@ -24,8 +24,7 @@ const query = gql`
 export default graphql(query, {
   options: {
     variables: {
-      token:
-        "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbiI6IjVkZDM5OWZjNzRhMmU4MDc5ZDE0NTNlMyIsImlhdCI6MTU3NDE1MDQwNn0.KmB-3HZnqqewrurFRnEQv34YKMCxpMls5ly5DEHsolw"
+      token: localStorage.getItem("token")
     }
   }
 })(MyPost);

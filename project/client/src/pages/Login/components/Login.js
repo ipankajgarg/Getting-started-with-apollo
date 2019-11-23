@@ -1,13 +1,18 @@
 import React, { Component } from "react";
-import { Form, Icon, Input, Button, Checkbox, message } from "antd";
+import { Form, Icon, Input, Button, message } from "antd";
 import { gql } from "apollo-boost";
 import { graphql } from "react-apollo";
+import { useHistory } from "react-router-dom";
 
-class Login extends Component {
-  handleSubmit = e => {
+function Login(props) {
+  const history = useHistory();
+  const { getFieldDecorator } = props.form;
+  const { container, form } = styles;
+
+  const handleSubmit = e => {
     e.preventDefault();
 
-    const { form, mutate } = this.props;
+    const { form, mutate } = props;
 
     form.validateFields((err, { email, password }) => {
       if (!err) {
@@ -19,6 +24,7 @@ class Login extends Component {
               }
             }) => {
               localStorage.setItem("token", token);
+              history.push("/");
             }
           )
           .catch(error => {
@@ -29,54 +35,42 @@ class Login extends Component {
     });
   };
 
-  render() {
-    console.log(this.props);
-    const { getFieldDecorator } = this.props.form;
-    const { container, form } = styles;
-
-    return (
-      <div style={container}>
-        <Form style={form} onSubmit={this.handleSubmit} className="login-form">
-          <Form.Item>
-            {getFieldDecorator("email", {
-              rules: [{ required: true, message: "Please input your email!" }]
-            })(
-              <Input
-                prefix={
-                  <Icon type="user" style={{ color: "rgba(0,0,0,.25)" }} />
-                }
-                placeholder="email"
-              />
-            )}
-          </Form.Item>
-          <Form.Item>
-            {getFieldDecorator("password", {
-              rules: [
-                { required: true, message: "Please input your Password!" }
-              ]
-            })(
-              <Input
-                prefix={
-                  <Icon type="lock" style={{ color: "rgba(0,0,0,.25)" }} />
-                }
-                type="password"
-                placeholder="Password"
-              />
-            )}
-          </Form.Item>
-          <Form.Item>
-            <Button
-              type="primary"
-              htmlType="submit"
-              className="login-form-button"
-            >
-              Log in
-            </Button>
-          </Form.Item>
-        </Form>
-      </div>
-    );
-  }
+  return (
+    <div style={container}>
+      <Form style={form} onSubmit={handleSubmit} className="login-form">
+        <Form.Item>
+          {getFieldDecorator("email", {
+            rules: [{ required: true, message: "Please input your email!" }]
+          })(
+            <Input
+              prefix={<Icon type="user" style={{ color: "rgba(0,0,0,.25)" }} />}
+              placeholder="email"
+            />
+          )}
+        </Form.Item>
+        <Form.Item>
+          {getFieldDecorator("password", {
+            rules: [{ required: true, message: "Please input your Password!" }]
+          })(
+            <Input
+              prefix={<Icon type="lock" style={{ color: "rgba(0,0,0,.25)" }} />}
+              type="password"
+              placeholder="Password"
+            />
+          )}
+        </Form.Item>
+        <Form.Item>
+          <Button
+            type="primary"
+            htmlType="submit"
+            className="login-form-button"
+          >
+            Log in
+          </Button>
+        </Form.Item>
+      </Form>
+    </div>
+  );
 }
 
 const styles = {

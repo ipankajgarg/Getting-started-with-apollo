@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Tabs, Icon } from "antd";
 import MyPosts from "./MyPosts";
 import AllPosts from "./AllPosts";
+import { Link } from "react-router-dom";
 
 const { TabPane } = Tabs;
 
@@ -20,7 +21,9 @@ class Home extends Component {
           </TabPane>
         </Tabs>
         <div style={iconContainer}>
-          <Icon type="plus" />
+          <Link to="/create/post">
+            <Icon type="plus" />
+          </Link>
         </div>
       </div>
     );
