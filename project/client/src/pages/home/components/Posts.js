@@ -9,7 +9,7 @@ function Posts({ data }) {
       renderItem={item => (
         <List.Item>
           <List.Item.Meta
-            title={<a href="https://ant.design">{item.title}</a>}
+            title={<a>{item.title}</a>}
             description={item.description}
           />
         </List.Item>
