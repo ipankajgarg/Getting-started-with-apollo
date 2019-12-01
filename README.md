@@ -64,6 +64,10 @@ Basic knowledge of react
 
 [Project(TODO)](https://github.com/ipankajgarg/Getting-started-with-apollo/tree/master/project)
 
+#### Bonus
+
+[Store intialization](https://github.com/ipankajgarg/Getting-started-with-apollo/tree/master/bonus/store-initialization)
+
 ## What next?
 
 - You can always checkout the official documentation [link](https://www.apollographql.com/docs/react/)
