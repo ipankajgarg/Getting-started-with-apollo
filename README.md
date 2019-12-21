@@ -68,6 +68,8 @@ Basic knowledge of react
 
 [Store intialization](https://github.com/ipankajgarg/Getting-started-with-apollo/tree/master/bonus/store-initialization)
 
+[Polling](https://github.com/ipankajgarg/Getting-started-with-apollo/tree/master/bonus/polling)
+
 ## What next?
 
 - You can always checkout the official documentation [link](https://www.apollographql.com/docs/react/)
