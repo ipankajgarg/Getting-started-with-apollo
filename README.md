@@ -70,6 +70,8 @@ Basic knowledge of react
 
 [Polling](https://github.com/ipankajgarg/Getting-started-with-apollo/tree/master/bonus/polling)
 
+[Fragments](https://github.com/ipankajgarg/Getting-started-with-apollo/tree/master/bonus/fragments)
+
 ## What next?
 
 - You can always checkout the official documentation [link](https://www.apollographql.com/docs/react/)
